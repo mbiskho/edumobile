@@ -1,16 +1,24 @@
-# eduakhir
+# Eduspace F-10
 
-A new Flutter project.
+Berikut anggota kelompok kami:
 
-## Getting Started
+- Bisma Khomeini  2006507600
+- Zefanya Soplantila - 2006597696
+- Siti Nurazizah Jamilah Rahat - 2006597411
+- Fransiskus David - 2006597664
+- Widya Ayu Trinita - 2006597550
+- Irsyad Taqiuddin - 2006597821
+- Pavita Maheswari I. P - s2006597393
 
-This project is a starting point for a Flutter application.
+## APK-LINK
+Link to APK : https://github.com/mbiskho/edumobile/releases/tag/prelease.0.0
 
-A few resources to get you started if this is your first Flutter project:
+## Daftar Modul
+- Home : Siti Nurazizah
+- Login & Logout : Zefanya
+- Courses : Bisma
+- FAQ & Introduction : Widya Ayu
+- Dashboard : Pavita
+- Profile : Irsyad
+- Quiz : Fransiskus
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
