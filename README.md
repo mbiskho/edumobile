@@ -22,3 +22,11 @@ Link to APK : https://github.com/mbiskho/edumobile/releases/tag/prelease.0.0
 - Profile : Irsyad
 - Quiz : Fransiskus
 
+## Integrasi dengan web
+Dalam menangani integrasi antara mobile flutter dengan web app yang sudah dibuat, kami akan mengimplementasikan JsonResponse 
+untuk semua response yang ada (GET, POST, UPDATE, DELETE). Selain itu, kami akan membuat API Contract yang bisa dilihat di : https://ristek.link/f10-API, hal ini digunakan untuk mengetahui response yang diberikan oleh suatu url dan parameter tertentu.
+
+Dalam menangani Authentikasi dan Authorisasi kami akan mengimplimentasikan JSON WEB TOKEN (JWT) yang dimana flutter mobile akan menyimpan json token untuk melakukan authorisasi terhadap pengiriman dan penerimaan data dari web.
+
+
+
