@@ -80,12 +80,12 @@ class _MyFormState extends State<MyForm> {
         return Scaffold(      
             body: Container(
               decoration: const BoxDecoration(
-                color: Colors.white
+                color: Color.fromRGBO(246, 249, 252, 1)
               ),
               child: Center(
             child: Column(
                 mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children : [
                 Image.asset('assets/images/logoblack.jpg',
                   height: 125,
@@ -94,7 +94,7 @@ class _MyFormState extends State<MyForm> {
                 Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height : 225,
+                      height : 240,
                       width  : 275,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -130,7 +130,6 @@ class _MyFormState extends State<MyForm> {
                                         name = value.toString();
                                         return null;
                                     })),
-                            const SizedBox(height: 10.0),
                             Padding(
                                 padding: const EdgeInsets.all(7.0),
                                 child: TextFormField(
@@ -186,6 +185,7 @@ class _MyFormState extends State<MyForm> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(275, 25),
                         primary: const Color.fromRGBO(0, 22, 42, 20),
                         onSurface: const Color.fromRGBO(0, 22, 42, 20),
                         shape: RoundedRectangleBorder(

@@ -35,15 +35,15 @@ class _MyRegFormState extends State<MyRegForm> {
 
     @override
     Widget build(BuildContext context) {
-        return Scaffold(
+        return Scaffold(      
             body: Container(
               decoration: const BoxDecoration(
-                color: Colors.white
+                color: Color.fromRGBO(246, 249, 252, 1)
               ),
             child : Center(
             child: Column(
                 mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children : [
                   Image.asset('assets/images/logoblack.jpg',
                     height: 100,
@@ -53,7 +53,7 @@ class _MyRegFormState extends State<MyRegForm> {
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
                       width  : 275,
-                      height : 335,
+                      height : 375,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
@@ -73,7 +73,13 @@ class _MyRegFormState extends State<MyRegForm> {
                               child: TextFormField(
                                   decoration: const InputDecoration(
                                       labelText: "Username",
-                                      hintText: "Enter Your Name (eg: David Silva)"
+                                      hintText: "Enter Your Name (eg: David Silva)",
+                                      focusedBorder: const OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                          borderSide: BorderSide(
+                                            color: Colors.black,
+                                          ),
+                                        )
                                   ),
                                   validator: (String? value) {
                                     if (value != null && value.isEmpty) {
@@ -81,14 +87,19 @@ class _MyRegFormState extends State<MyRegForm> {
                                     }
                                     name = value.toString();
                                     return null;
-                                  })),
-                          const SizedBox(height: 3.0),
+                                  })),                    
                           Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: TextFormField(
                                   decoration: const InputDecoration(
                                       labelText: "Email",
                                       hintText: "Enter Your Email (eg: Davidsilva@gmail.com)",
+                                      focusedBorder: const OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                          borderSide: BorderSide(
+                                            color: Colors.black,
+                                          ),
+                                        )
                                   ),
                                   validator: (String? value) {
                                     if (value != null && value.isEmpty){
@@ -98,8 +109,7 @@ class _MyRegFormState extends State<MyRegForm> {
                                     }
                                     email = value.toString();
                                     return null;
-                                  })),
-                          const SizedBox(height: 3.0),
+                                  })),                          
                           Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: TextFormField(
@@ -115,7 +125,13 @@ class _MyRegFormState extends State<MyRegForm> {
                                                    setState(() {
                                                       _passwordVisible = !_passwordVisible;
                                                    });
-                                                })
+                                                }),
+                                      focusedBorder: const OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                          borderSide: BorderSide(
+                                            color: Colors.black,
+                                          ),
+                                        )
                                   ),
                                   validator: (String? value) {
                                     if (value != null && value.isEmpty) {
@@ -125,8 +141,7 @@ class _MyRegFormState extends State<MyRegForm> {
                                     }
                                     pass = value.toString();
                                     return null;
-                                  })),
-                          const SizedBox(height: 3.0), 
+                                  })),                          
                           Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: TextFormField(
@@ -176,6 +191,7 @@ class _MyRegFormState extends State<MyRegForm> {
                         } 
                       },
                       style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(275, 25),
                         primary: const Color.fromRGBO(0, 22, 42, 20),
                         onSurface: const Color.fromRGBO(0, 22, 42, 20),
                         shape: RoundedRectangleBorder(
