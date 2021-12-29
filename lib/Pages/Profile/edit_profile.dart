@@ -28,7 +28,7 @@ class _EditProfileState extends State<EditProfile> {
                     color: Color(0xffbcbcbc),
                     spreadRadius: 1,
                     blurRadius: 3,
-                    offset: Offset(0, 3), // changes position of shadow
+                    offset: Offset(0, 3),
                   )
                 ],
               ),

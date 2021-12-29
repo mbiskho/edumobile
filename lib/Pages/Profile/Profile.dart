@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import './edit_profile.dart';
+import './api.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
+
+  get name => null;
 
   @override
   _ProfileState createState() => _ProfileState();
 }
 
 class _ProfileState extends State<Profile> {
+  // Profiles data = Profiles().getProfile() as Profiles;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,39 +41,51 @@ class _ProfileState extends State<Profile> {
               child: Column(
                 children: [
                   Container(
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 40, bottom: 20),
-                      child: const CircleAvatar(
-                        radius: 50,
+                    margin: const EdgeInsets.only(top: 40, bottom: 20),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: Image.network(
+                          "https://www.uclg-planning.org/sites/default/files/styles/featured_home_left/public/no-user-image-square.jpg?itok=PANMBJF-",
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(bottom: 8),
                     child: Text(
-                      "Nama",
+                      "No Name",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(bottom: 40),
-                    child: Text(
+                    child: const Text(
                       "Username",
                       style: TextStyle(
                         fontSize: 15,
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: 300,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 125,
                           child: Column(
-                            children: [Text("350"), Text("Courses")],
+                            children: const [
+                              Text(
+                                "350",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text("Courses")
+                            ],
                           ),
                         ),
                         Container(
@@ -75,10 +93,16 @@ class _ProfileState extends State<Profile> {
                           height: 50,
                           width: 1,
                         ),
-                        Container(
+                        SizedBox(
                           width: 125,
                           child: Column(
-                            children: [Text("12090"), Text("Points")],
+                            children: const [
+                              Text(
+                                "12090",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text("Points")
+                            ],
                           ),
                         )
                       ],
@@ -86,10 +110,11 @@ class _ProfileState extends State<Profile> {
                   ),
                   Container(
                     width: 80,
-                    margin: EdgeInsets.only(top: 20, bottom: 30),
+                    margin: const EdgeInsets.only(top: 20, bottom: 30),
                     child: TextButton(
                         style: TextButton.styleFrom(
-                          side: BorderSide(width: 0.5, color: Colors.black),
+                          side:
+                              const BorderSide(width: 0.5, color: Colors.black),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -100,7 +125,7 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => EditProfile()));
                         },
-                        child: Text(
+                        child: const Text(
                           "Edit",
                           style: TextStyle(color: Colors.black),
                         )),
@@ -111,9 +136,9 @@ class _ProfileState extends State<Profile> {
           ),
           Center(
             child: Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               width: 350,
-              child: Text(
+              child: const Text(
                 "Overview",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -121,17 +146,18 @@ class _ProfileState extends State<Profile> {
           ),
           Center(
             child: Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
                       width: 350,
                       height: 70,
                       color: Colors.white,
                       child: TextButton.icon(
                         style: TextButton.styleFrom(
-                          side: BorderSide(width: 0.5, color: Colors.black),
+                          side:
+                              const BorderSide(width: 0.5, color: Colors.black),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -143,7 +169,7 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 125,
                               alignment: Alignment.centerLeft,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.inbox,
                                 color: Colors.black,
                               ),
@@ -151,26 +177,27 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 125,
                               alignment: Alignment.centerRight,
-                              child: Text("Dashboard",
+                              child: const Text("Dashboard",
                                   style: TextStyle(color: Colors.black)),
                             ),
                           ],
                         ),
-                        label: Text(
+                        label: const Text(
                           "",
                         ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
                       width: 350,
                       height: 70,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(15))),
                       child: TextButton.icon(
                         style: TextButton.styleFrom(
-                          side: BorderSide(width: 0.5, color: Colors.black),
+                          side:
+                              const BorderSide(width: 0.5, color: Colors.black),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -182,7 +209,7 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 125,
                               alignment: Alignment.centerLeft,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.list_alt,
                                 color: Colors.black,
                               ),
@@ -190,32 +217,33 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 125,
                               alignment: Alignment.centerRight,
-                              child: Text("Details",
+                              child: const Text("Details",
                                   style: TextStyle(color: Colors.black)),
                             ),
                           ],
                         ),
-                        label: Text(
+                        label: const Text(
                           "",
                         ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
                       color: Colors.black45,
                       height: 1,
                       width: 350,
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
                       width: 350,
                       height: 70,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(15))),
                       child: TextButton.icon(
                         style: TextButton.styleFrom(
-                          side: BorderSide(width: 0.5, color: Colors.black),
+                          side:
+                              const BorderSide(width: 0.5, color: Colors.black),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -227,7 +255,7 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 125,
                               alignment: Alignment.centerLeft,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.logout,
                                 color: Colors.black,
                               ),
@@ -235,7 +263,7 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 125,
                               alignment: Alignment.centerRight,
-                              child: Text("Logout",
+                              child: const Text("Logout",
                                   style: TextStyle(color: Colors.black)),
                             ),
                           ],
