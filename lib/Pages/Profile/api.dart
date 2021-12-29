@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:ta_banget/pages/profile.dart';
+import './Profile.dart';
 
 class Course {}
 

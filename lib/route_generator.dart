@@ -6,7 +6,7 @@ import './Pages/Home/Home.dart';
 import './Pages/Dashboard/Dashboard.dart';
 import './Pages/Profile/Profile.dart';
 import './Pages/AUTH/Login.dart';
-import './Pages/AUTH/Logout.dart';
+import './Pages/AUTH/Register.dart';
 import './Pages/Quiz/PreQuiz.dart';
 import './Pages/Quiz/Quiz.dart';
 import './Pages/Course/Content.dart';
@@ -77,6 +77,26 @@ class RouteGenerator {
         if (args is String) {
           return MaterialPageRoute(
             builder: (_) => Profile(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+
+      case '/login':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => MyLogin(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+
+      case '/logout':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => MyRegForm(
                   // data: args,
                 ),
           );
