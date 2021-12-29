@@ -32,26 +32,17 @@ class RouteGenerator {
           );
         }
         return _errorRoute();
-      case '/dashboard':
+      case '/course/content':
         if (args is String) {
           return MaterialPageRoute(
-            builder: (_) => Dashboard(
-                  // data: args,
-                ),
-          );
-        }
-        return _errorRoute();
-      case '/dashboard':
-        if (args is String) {
-          return MaterialPageRoute(
-            builder: (_) => Dashboard(
+            builder: (_) => Content(
                   // data: args,
                 ),
           );
         }
         return _errorRoute();
 
-      case '/course-list':
+      case '/course':
         if (args is String) {
           return MaterialPageRoute(
             builder: (_) => CourseList(
@@ -61,6 +52,17 @@ class RouteGenerator {
         }
         return _errorRoute();
 
+      case '/course/overview':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => CourseOverview(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+      
+
       case '/dashboard':
         if (args is String) {
           return MaterialPageRoute(
@@ -70,7 +72,17 @@ class RouteGenerator {
           );
         }
         return _errorRoute();
-      
+
+      case '/profile':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => Profile(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+        
       default:
         return _errorRoute();
     }
