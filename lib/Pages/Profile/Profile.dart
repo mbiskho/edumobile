@@ -14,6 +14,8 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  
+  int _selectedIndex = 2;
   // Profiles data = Profiles().getProfile() as Profiles;
   @override
   Widget build(BuildContext context) {
@@ -277,6 +279,46 @@ class _ProfileState extends State<Profile> {
                 )),
           )
         ],
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            label: 'Courses',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+            backgroundColor: Colors.purple,
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: (int index){
+          if(index == 0){
+            Navigator.of(context).pushNamed(
+              '/',
+              arguments: 'Hello there from the first page!',
+            );
+          }else if(index == 1){
+            Navigator.of(context).pushNamed(
+              '/course',
+              arguments: 'Hello there from the first page!',
+            );
+          }else if(index == 2){
+            Navigator.of(context).pushNamed(
+              '/profile',
+              arguments: 'Hello there from the first page!',
+            );
+          }
+        },
       ),
     );
   }

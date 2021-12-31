@@ -14,9 +14,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title : 'Eduspace',
-      theme : ThemeData(
-
-      ),
+      theme : ThemeData(),
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
     );
