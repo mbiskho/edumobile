@@ -12,7 +12,7 @@ import './Pages/Quiz/Quiz.dart';
 import './Pages/Course/Content.dart';
 import './Pages/Course/CourseList.dart';
 import './Pages/Course/CourseOverview.dart';
-
+import './Pages/FAQ/FAQ.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -22,7 +22,7 @@ class RouteGenerator {
 
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => Intro());
+        return MaterialPageRoute(builder: (_) => OnBoardingScreen());
       case '/home':
         // Validation of correct data type
         if (args is String) {
@@ -98,6 +98,16 @@ class RouteGenerator {
         if (args is String) {
           return MaterialPageRoute(
             builder: (_) => MyRegForm(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+
+      case '/faq':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => FAQScreen(
                   // data: args,
                 ),
           );

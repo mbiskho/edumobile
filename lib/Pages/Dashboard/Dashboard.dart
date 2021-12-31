@@ -70,6 +70,8 @@ class _DashboardState extends State<Dashboard> {
   //     ));
   //   }
   // }
+
+  var _selectedIndex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +87,7 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(color: Colors.black)),
                 new Row(
                   children: <Widget>[
-                    for (int i = 1; i < 3; i++) buildImageCard(listCourse[i].thumbnail),
+                    // for (int i = 1; i < 3; i++) buildImageCard(listCourse[i].thumbnail),
                   ],
                 ),
                 // new Row(crossAxisAlignment: 2, children: [
@@ -102,13 +104,53 @@ class _DashboardState extends State<Dashboard> {
                   "Your Courses",
                   style: TextStyle(color: Colors.black),
                 ),
-                for (int i = 0; i < 3; i++)
-                  buildCourses(listCourse[i].title,
-                      listCourse[i].users + ' students')
+                // for (int i = 0; i < 3; i++)
+                //   buildCourses(listCourse[i].title,
+                //       listCourse[i].users + ' students')
               ],
             ),
           )),
-        ));
+        )
+        ,bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            label: 'Courses',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+            backgroundColor: Colors.purple,
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: (int index){
+          if(index == 0){
+            Navigator.of(context).pushNamed(
+              '/home',
+              arguments: 'Hello there from the first page!',
+            );
+          }else if(index == 1){
+            Navigator.of(context).pushNamed(
+              '/course',
+              arguments: 'Hello there from the first page!',
+            );
+          }else if(index == 2){
+            Navigator.of(context).pushNamed(
+              '/profile',
+              arguments: 'Hello there from the first page!',
+            );
+          }
+        },
+      ),    
+    );
     // return Container();
     // return MaterialApp(
     //   title: 'Eduspace Courses',

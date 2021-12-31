@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
           ],
         )
       ),
-      bottomNavigationBar: BottomNavigationBar(
+     bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -46,10 +46,24 @@ class _HomeState extends State<Home> {
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
         onTap: (int index){
-          Navigator.of(context).pushNamed(
-              '/course-list',
+         
+         if(index == 0){
+            Navigator.of(context).pushNamed(
+              '/home',
               arguments: 'Hello there from the first page!',
-          );
+            );
+          }else if(index == 1){
+            Navigator.of(context).pushNamed(
+              '/course',
+              arguments: 'Hello there from the first page!',
+            );
+          }else if(index == 2){
+            Navigator.of(context).pushNamed(
+              '/profile',
+              arguments: 'Hello there from the first page!',
+            );
+          }
+
         },
       ),
     );

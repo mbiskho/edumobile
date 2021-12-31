@@ -455,7 +455,7 @@ class _CourseListState extends State<CourseList> {
         onTap: (int index){
           if(index == 0){
             Navigator.of(context).pushNamed(
-              '/',
+              '/home',
               arguments: 'Hello there from the first page!',
             );
           }else if(index == 1){

@@ -184,6 +184,7 @@ class _ProfileState extends State<Profile> {
                                   style: TextStyle(color: Colors.black)),
                             ),
                             onTap: (){
+                              print("Go Dashboard");
                               Navigator.of(context).pushNamed(
                                 '/dashboard',
                                 arguments: 'Hello there from the first page!',
@@ -224,11 +225,19 @@ class _ProfileState extends State<Profile> {
                                 color: Colors.black,
                               ),
                             ),
-                            Container(
+                            InkWell(
+                              child : Container(
                               width: 125,
                               alignment: Alignment.centerRight,
-                              child: const Text("Details",
+                              child: const Text("FAQ",
                                   style: TextStyle(color: Colors.black)),
+                            ),
+                            onTap:(){
+                                Navigator.of(context).pushNamed(
+                                '/faq',
+                                arguments: 'Hello there from the first page!',
+                              );
+                            },
                             ),
                           ],
                         ),
@@ -312,7 +321,7 @@ class _ProfileState extends State<Profile> {
         onTap: (int index){
           if(index == 0){
             Navigator.of(context).pushNamed(
-              '/',
+              '/home',
               arguments: 'Hello there from the first page!',
             );
           }else if(index == 1){
