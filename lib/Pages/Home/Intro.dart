@@ -49,10 +49,22 @@ class _IntroState extends State<Intro> {
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
         onTap: (int index){
-          Navigator.of(context).pushNamed(
-              '/course-list',
+          if(index == 0){
+            Navigator.of(context).pushNamed(
+              '/',
               arguments: 'Hello there from the first page!',
-          );
+            );
+          }else if(index == 1){
+            Navigator.of(context).pushNamed(
+              '/course',
+              arguments: 'Hello there from the first page!',
+            );
+          }else if(index == 2){
+            Navigator.of(context).pushNamed(
+              '/profile',
+              arguments: 'Hello there from the first page!',
+            );
+          }
         },
       ),
     );

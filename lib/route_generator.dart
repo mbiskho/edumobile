@@ -18,6 +18,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Getting arguments passed in while calling Navigator.pushNamed
     final args = settings.arguments;
+    print(args);
 
     switch (settings.name) {
       case '/':
@@ -56,8 +57,8 @@ class RouteGenerator {
         if (args is String) {
           return MaterialPageRoute(
             builder: (_) => CourseOverview(
-                  // data: args,
-                ),
+                // data: args,
+            ),
           );
         }
         return _errorRoute();
