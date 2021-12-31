@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 //import 'dart:js';
-import 'package:edukuis/src/screens/PreQuiz.dart';
-import 'package:edukuis/src/screens/hasilquiz.dart';
-
+import './PreQuiz.dart';
+import './QuizResult.dart';
 class Quiz extends StatefulWidget {
   Quiz({Key? key}) : super(key: key);
 

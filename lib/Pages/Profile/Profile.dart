@@ -176,12 +176,20 @@ class _ProfileState extends State<Profile> {
                                 color: Colors.black,
                               ),
                             ),
-                            Container(
+                            InkWell(
+                              child : Container(
                               width: 125,
                               alignment: Alignment.centerRight,
                               child: const Text("Dashboard",
                                   style: TextStyle(color: Colors.black)),
                             ),
+                            onTap: (){
+                              Navigator.of(context).pushNamed(
+                                '/dashboard',
+                                arguments: 'Hello there from the first page!',
+                              );
+                            }
+                            )
                           ],
                         ),
                         label: const Text(

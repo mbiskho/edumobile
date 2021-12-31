@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kusis_flutt/src/screens/Quiz.dart';
+import './Quiz.dart';
 
 class PreQuiz extends StatefulWidget {
   PreQuiz({Key? key}) : super(key: key);

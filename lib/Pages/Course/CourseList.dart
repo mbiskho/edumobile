@@ -21,7 +21,7 @@ class _CourseListState extends State<CourseList> {
   List AllCourses = [
     {
             "id": 1,
-            "title": "Digital Engagement",
+            "title": "Digital   Engagement",
             "university": "Universitas Indonesia",
             "users": 0,
             "subject": "Technology",

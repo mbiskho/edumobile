@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import "dart:math";
+import './constant.dart';
 
 class Content extends StatefulWidget {
   Content({Key? key}) : super(key: key);
@@ -13,21 +15,61 @@ class Content extends StatefulWidget {
 class _ContentState extends State<Content> {
   int _selectedIndex = 1;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
- 
-  @override
-  void initState(){
-    super.initState();  
-  }
-
+  String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjQwNzcyMjc5LCJleHAiOjE2NDA3NzU4Nzl9.MTywLXMdVcjJqYSoz9o0h-kRYla2OPIAVQ7Re1s2s-c';
+  String inital = '5-ciHIwzBCo';
+  String PartName = '';
+  String UnivName = '';
   YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'waQRM7N-Wvg',
+    initialVideoId:  '',
     params: YoutubePlayerParams(
-        playlist: ['nPt8bK2gbaU', 'gQDByCdjUXw'], // Defining custom playlist
+        playlist: ['waQRM7N-Wvg', 'OmJ-4B-mS-Y'], // Defining custom playlist
         startAt: Duration(seconds: 30),
         showControls: true,
         showFullscreenButton: true,
     ),
   );
+ 
+  @override
+  void initState(){
+    super.initState();
+    final _random = new Random();
+    var element = VID_WORKS[_random.nextInt(VID_WORKS.length)];
+    var randomTitle = TITLE[_random.nextInt(TITLE.length)];
+    var randomUniv = UNIV [_random.nextInt(UNIV.length)];
+
+    setState(() {
+      _controller = YoutubePlayerController(
+        initialVideoId:  element,
+        params: YoutubePlayerParams(
+            playlist: ['waQRM7N-Wvg', 'OmJ-4B-mS-Y'], // Defining custom playlist
+            startAt: Duration(seconds: 30),
+            showControls: true,
+            showFullscreenButton: true,
+        ),
+      );
+      
+      PartName = randomTitle;
+      UnivName = randomUniv;
+    }); 
+  }
+
+  void Randomize(){
+    final _random = new Random();
+    var element = VID_WORKS[_random.nextInt(VID_WORKS.length)];
+    var randomTitle = TITLE[_random.nextInt(TITLE.length)];
+    setState(() {
+      PartName = randomTitle;
+      _controller = YoutubePlayerController(
+        initialVideoId:  element,
+        params: YoutubePlayerParams(
+            playlist: ['waQRM7N-Wvg', 'OmJ-4B-mS-Y'], // Defining custom playlist
+            startAt: Duration(seconds: 30),
+            showControls: true,
+            showFullscreenButton: true,
+        ),
+      );
+    });
+  }
 
 
   @override
@@ -42,21 +84,195 @@ class _ContentState extends State<Content> {
                   aspectRatio: 16 / 9,
                 ),
               ),
+              SizedBox(height :30),
               Container(
                 margin :  const EdgeInsets.symmetric(horizontal : 35),
                 child : Row(
                   children: [
-                    Text('Video id')
+                    Text(PartName, 
+                    style : TextStyle(fontSize: 25))
                   ]
                 )
               ),
+              SizedBox(height : 8),
+              Container(
+                child : Text(UnivName),
+                margin :  const EdgeInsets.symmetric(horizontal : 35),
+              ),
+              SizedBox(height : 18),
+              Container(
+                child : InkWell(
+                  child : Row(
+                    children: [
+                      Expanded(
+                        flex : 7,
+                        child : Container(
+                          child : Text('01'),
+                          margin : const EdgeInsets.symmetric(horizontal : 10),
+                        ),
+                        
+                      ),
+                      Expanded(
+                        flex : 3,
+                        child : Text('Part 01'),
+                      ),
+                    ]
+                  )
+                ),
+                decoration: new BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                margin: const EdgeInsets.symmetric(horizontal : 35, vertical : 10),
+                height : 50
+                
+              ),
+
+               Container(
+                child : InkWell(
+                  onTap: () {
+                    Randomize();
+                  },
+                  child : Row(
+                    children: [
+                      Expanded(
+                        flex : 7,
+                        child : Container(
+                          child : Text('02'),
+                          margin : const EdgeInsets.symmetric(horizontal : 10),
+                        ),
+                        
+                      ),
+                      Expanded(
+                        flex : 3,
+                        child : Text('Part 02'),
+                      ),
+                    ]
+                  )
+                ),
+                decoration: new BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                margin: const EdgeInsets.symmetric(horizontal : 35, vertical : 10),
+                height : 50
+                
+              ),
+
+
+               Container(
+                child : InkWell(
+                  onTap: () {
+                    Randomize();
+                  },
+                  child : Row(
+                    children: [
+                      Expanded(
+                        flex : 7,
+                        child : Container(
+                          child : Text('03'),
+                          margin : const EdgeInsets.symmetric(horizontal : 10),
+                        ),
+                        
+                      ),
+                      Expanded(
+                        flex : 3,
+                        child : Text('Part 03'),
+                      ),
+                    ]
+                  )
+                ),
+                decoration: new BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                margin: const EdgeInsets.symmetric(horizontal : 35, vertical : 10),
+                height : 50
+                
+              ),
 
               Container(
-                child : Text('Video List'),
-                margin :  const EdgeInsets.symmetric(horizontal : 35),
-              )
+                child : InkWell(
+                  onTap: () {
+                    Randomize();
+                  },
+                  child : Row(
+                    children: [
+                      Expanded(
+                        flex : 7,
+                        child : Container(
+                          child : Text('04'),
+                          margin : const EdgeInsets.symmetric(horizontal : 10),
+                        ),
+                        
+                      ),
+                      Expanded(
+                        flex : 3,
+                        child : Text('Part 04'),
+                      ),
+                    ]
+                  )
+                ),
+                decoration: new BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                margin: const EdgeInsets.symmetric(horizontal : 35, vertical : 10),
+                height : 50
+                
+              ),
 
-          ],
+              Container(
+                child : InkWell(
+                  onTap: () {
+                    Randomize();
+                  },
+                  child : Row(
+                    children: [
+                      Expanded(
+                        flex : 7,
+                        child : Container(
+                          child : Text('05'),
+                          margin : const EdgeInsets.symmetric(horizontal : 10),
+                        ),
+                        
+                      ),
+                      Expanded(
+                        flex : 3,
+                        child : Text('Part 05'),
+                      ),
+                    ]
+                  )
+                ),
+                decoration: new BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                margin: const EdgeInsets.symmetric(horizontal : 35, vertical : 10),
+                height : 50
+                
+              ),
+              
+              Padding(
+                padding : const EdgeInsets.symmetric(horizontal : 150),
+                child : ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                    '/course/overview',
+                    arguments: '0',
+                  );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(50, 40),
+                      primary : Colors.black87 // put the width and height you want
+                    ), 
+                      child: Container(
+                      child :  Text('Quiz')
+                    ),
+                  ),
+              ),
+              SizedBox(height :30)
+            ],
         )
       ),
       bottomNavigationBar: BottomNavigationBar(

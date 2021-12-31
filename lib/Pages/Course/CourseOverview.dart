@@ -11,10 +11,10 @@ class CourseOverview extends StatefulWidget {
 
 class _CourseOverviewState extends State<CourseOverview> {
   int _selectedIndex = 1;
-  String URL = 'https://eduspace-api.herokuapp.com/api/course/specific?id=1';
+  String URL = 'https://eduspace-api.herokuapp.com/api/course/specific?id=2';
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjQwNzcyMjc5LCJleHAiOjE2NDA3NzU4Nzl9.MTywLXMdVcjJqYSoz9o0h-kRYla2OPIAVQ7Re1s2s-c';
-  var ImageCourse = 'https://cdn.discordapp.com/attachments/755605623214964900/923835788511281182/Math.jpeg';
+  var ImageCourse = '';
   var title = '';
   var user = 0;
   var univ = '';
@@ -31,11 +31,6 @@ class _CourseOverviewState extends State<CourseOverview> {
       });
     var jsonData = jsonDecode(response.body);
     
-    print(jsonData);
-
-    print(jsonData['course']['thumbnail']);
-    print(jsonData['isEnroll']);
-
     setState((){
       IsTaken = jsonData['isEnroll'];
       ImageCourse = jsonData['course']['thumbnail'];
@@ -44,7 +39,6 @@ class _CourseOverviewState extends State<CourseOverview> {
       subject = jsonData['course']['subject'];
       univ = jsonData['course']['university'];
     });
-
 
   }
 
@@ -110,7 +104,7 @@ class _CourseOverviewState extends State<CourseOverview> {
               onPressed: () {
                           Navigator.of(context).pushNamed(
                           '/course/content',
-                           arguments: '0',
+                           arguments: '1',
                            );
                               },
                               style: ElevatedButton.styleFrom(

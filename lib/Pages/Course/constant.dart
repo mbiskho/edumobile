@@ -32,3 +32,49 @@ const COURSE_DATA = [
             "thumbnail": "https://cdn.discordapp.com/attachments/755605623214964900/923835787768909874/Enggris.png"
         }
 ];
+
+
+const VID_WORKS = [
+  'OmJ-4B-mS-Y',
+  '5-ciHIwzBCo',
+  '5-ciHIwzBCo',
+  'waQRM7N-Wvg',
+];
+
+const  PART = [
+  {
+    'No' : '01',
+    'Name' : 'Part 01'
+  },
+  {
+    'No' : '02',
+    'Name' : 'Part 02'
+  },
+  {
+    'No' : '03',
+    'Name' : 'Part 03'
+  },
+  {
+    'No' : '04',
+    'Name' : 'Part 04'
+  },
+];
+
+
+const UNIV = [
+  'ITB',
+  'Univeristas Indonesia',
+  'Binus University',
+  'President University',
+];
+
+const TITLE = [
+  'Digital Enhancment',
+  'Project Management',
+  'Digital Environment',
+  'Calculus 01',
+  'Calculus 02',
+  'Calculus 03',
+  'Environment Media',
+  'Project Supply Chain'
+];
