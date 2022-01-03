@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../AUTH/AuthStore.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -17,7 +19,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
          Padding(
            padding: const EdgeInsets.all(50),
            child: Image.asset(
-                "assets/onboarding_image.png",
+                "assets/images/onBoard.png",
                 width: 250,
                 height: 200,
               ),
@@ -70,11 +72,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     color: Colors.white,
                   ),
                   backgroundColor: Color(0xff7A2048),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(
+                  onPressed: ()  async{
+                   
+
+                    Map<String, String> allValues = await storage.readAll();
+                    storage.deleteAll();
+                    if(allValues['jwt'] == null ){
+                          Navigator.of(context).pushNamed(
+                              '/login',
+                              arguments: 'Hello there from the first page!',
+                          );
+                    }else{
+                         Navigator.of(context).pushNamed(
                         '/home',
                         arguments: 'Hello there from the first page!',
-                    );
+                        );
+                    }
                   },
                 )
               ],

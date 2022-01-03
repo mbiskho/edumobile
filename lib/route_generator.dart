@@ -52,12 +52,12 @@ class RouteGenerator {
           );
         }
         return _errorRoute();
-
+  
       case '/course/overview':
         if (args is String) {
           return MaterialPageRoute(
             builder: (_) => CourseOverview(
-                // data: args,
+                args
             ),
           );
         }
@@ -84,6 +84,18 @@ class RouteGenerator {
         }
         return _errorRoute();
 
+
+      case '/register':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) =>  MyRegForm(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+      
+
       case '/login':
         if (args is String) {
           return MaterialPageRoute(
@@ -108,6 +120,27 @@ class RouteGenerator {
         if (args is String) {
           return MaterialPageRoute(
             builder: (_) => FAQScreen(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+
+      case '/prequiz':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => PreQuiz(
+                  // data: args,
+                ),
+          );
+        }
+        return _errorRoute();
+
+
+      case '/quiz':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => Quiz(
                   // data: args,
                 ),
           );

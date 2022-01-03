@@ -15,13 +15,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(  
       appBar: AppBar(
-        title : Text('Routing App'),
+        title : Text('HomePage : Not Implemented'),
       ),
 
       body : Center(
         child : Column(
           children: [
-            Text('This is Intro'),
+            Text('Ceritanya Homepage'),
           ],
         )
       ),

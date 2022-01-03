@@ -4,6 +4,7 @@ import 'package:eduakhir/Pages/Course/CourseList.dart';
 import 'package:eduakhir/Pages/Dashboard/repository.dart';
 import 'package:flutter/material.dart';
 import './course.dart';
+import '../AUTH/AuthStore.dart';
 
 class Dashboard extends StatefulWidget {
   Dashboard({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  List<Course> listCourse = [];
+  List listCourse = [];
   Repository repo = Repository();
   Container latestCourses = new Container();
 
@@ -87,7 +88,21 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(color: Colors.black)),
                 new Row(
                   children: <Widget>[
-                    // for (int i = 1; i < 3; i++) buildImageCard(listCourse[i].thumbnail),
+                    Container(
+                      child : Column(
+                        children : [
+                          Text('Mathematics'),
+                          Text('Bahasa Inggris'),
+                          Text('Digital Engangement'),
+                          Text('Digital View'),
+                          Container(
+                            width : double.infinity,
+                            child : Text('Mathematics')
+                          ),
+                          
+                        ]
+                      )
+                    )
                   ],
                 ),
                 // new Row(crossAxisAlignment: 2, children: [
@@ -97,7 +112,10 @@ class _DashboardState extends State<Dashboard> {
                 // new GridView.count(crossAxisCount: 3, children: latestCourse),
                 new Container(
                     child: new Row(
-                  children: <Widget>[],
+                  children: <Widget>[
+                    Text('Mathematics'),
+                    Text('Bahasa Inggris'),
+                  ],
                 )),
                 new Padding(padding: EdgeInsets.all(16.0)),
                 const Text(

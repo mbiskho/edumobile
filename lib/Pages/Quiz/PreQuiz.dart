@@ -40,7 +40,10 @@ class _PreQuizState extends State<PreQuiz> {
                     height: 55,
                     child: RaisedButton(
                         onPressed: () {
-                          Navigator.push(context,MaterialPageRoute(builder: (BuildContext context) => Quiz()));
+                           Navigator.of(context).pushNamed(
+                          '/quiz',
+                           arguments: '1',
+                           );
                         },
                         textColor: Colors.white,
                         color: Colors.black,

@@ -3,25 +3,40 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class CourseOverview extends StatefulWidget {
-  CourseOverview({Key? key}) : super(key: key);
+  
+  late String text;
+
+  CourseOverview(String text){
+    this.text = text;
+    print(text);
+  }
 
   @override
-  _CourseOverviewState createState() => _CourseOverviewState();
+  _CourseOverviewState createState() => _CourseOverviewState(this.text);
 }
 
 class _CourseOverviewState extends State<CourseOverview> {
   int _selectedIndex = 1;
-  String URL = 'https://eduspace-api.herokuapp.com/api/course/specific?id=2';
+
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjQwNzcyMjc5LCJleHAiOjE2NDA3NzU4Nzl9.MTywLXMdVcjJqYSoz9o0h-kRYla2OPIAVQ7Re1s2s-c';
+  String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjQxMjE2OTIyLCJleHAiOjE2NDEyMjA1MjJ9.pthSw7xUqqRQ5E1t4_tdKlYf8Rai9jN5eWL25mBw_Wk';
   var ImageCourse = '';
   var title = '';
   var user = 0;
   var univ = '';
   var subject = '';
   bool IsTaken = false;
+  var ids = '';
+
+  _CourseOverviewState(String id){
+    this.ids = id;
+    GetCourse();
+  }
 
   GetCourse() async{
+    
+   String URL = 'https://eduspace-api.herokuapp.com/api/course/specific?id=$ids';
+   print(URL);
     final response = await http
       .get(Uri.parse(URL),
       headers: {
@@ -165,7 +180,7 @@ class _CourseOverviewState extends State<CourseOverview> {
 
 
 Future<Course> fetchCourse(String token, String id) async {
-   String URL = 'https://eduspace-api.herokuapp.com/api/course/specific?id=2';
+   String URL = 'https://eduspace-api.herokuapp.com/api/course/specific?id=$id';
   final response = await http
       .get(Uri.parse(URL),
       headers: {

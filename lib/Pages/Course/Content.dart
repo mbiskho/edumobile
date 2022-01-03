@@ -4,6 +4,7 @@ import 'package:chewie/chewie.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import "dart:math";
 import './constant.dart';
+import '../AUTH/AuthStore.dart';
 
 class Content extends StatefulWidget {
   Content({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class Content extends StatefulWidget {
 class _ContentState extends State<Content> {
   int _selectedIndex = 1;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjQwNzcyMjc5LCJleHAiOjE2NDA3NzU4Nzl9.MTywLXMdVcjJqYSoz9o0h-kRYla2OPIAVQ7Re1s2s-c';
+  String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjQxMjEzOTk1LCJleHAiOjE2NDEyMTc1OTV9.PoKIB2L02bmJp3onFraagUViHp_HopIcN7f4EqOJKLk';
   String inital = '5-ciHIwzBCo';
   String PartName = '';
   String UnivName = '';
@@ -258,7 +259,7 @@ class _ContentState extends State<Content> {
                 child : ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pushNamed(
-                    '/course/overview',
+                    '/prequiz',
                     arguments: '0',
                   );
                   },

@@ -60,7 +60,7 @@ class _MyFormState extends State<MyForm> {
 
     Future<String?> login(String username, String password) async {
       var res = await http.get(
-        Uri.parse('https://eduspace-api.herokuapp.com/api/auth/login?username={$username}&password={$password}') // Ini bisa diubah sesuai keperluan
+        Uri.parse('https://eduspace-api.herokuapp.com/api/auth/login?username=$username&password=$password') // Ini bisa diubah sesuai keperluan
       );
       if(res.statusCode == 200) return res.body;
       return null;
@@ -222,9 +222,14 @@ class _MyFormState extends State<MyForm> {
                           var jwt = await login(username, password);
                           if(jwt != null) {
                             storage.write(key: "jwt", value: jwt);
-                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-                              builder: (context) => AfterLogin.fromBase64(jwt) //Tujuan dapat diganti
-                            ), (route) => false);
+                            // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                            //   builder: (context) => AfterLogin.fromBase64(jwt) //Tujuan   dapat diganti
+                            // ), (route) => false);
+
+                            Navigator.of(context).pushNamed(
+                              '/home',
+                              arguments: 'Hello there from the first page!',
+                            );
                           } else {
                             displayDialog(context, "An Error Occurred", "No account was found matching that username and password");
                           }
@@ -285,7 +290,15 @@ class AfterLogin extends StatelessWidget{
             // HomePage() // Akan disesuaikan 
             // :
             // snapshot.hasError ? const Text("An error occurred") : const CircularProgressIndicator()
-            Text("$payload")
+            ElevatedButton(
+              onPressed: () {
+                   Navigator.of(context).pushNamed(
+                              '/home',
+                              arguments: 'Hello there from the first page!',
+                            );
+              },
+              child : Text('Home')
+            )
         ),
         // child: Text("$payload")
       ),
