@@ -11,7 +11,7 @@ Berikut anggota kelompok kami:
 - Pavita Maheswari I. P - s2006597393
 
 ## APK-LINK
-Link to APK : https://github.com/mbiskho/edumobile/releases/tag/prelease.0.0
+Link to APK : https://github.com/mbiskho/edumobile/releases/tag/ReleaseBug
 
 ## Daftar Modul
 - Home : Siti Nurazizah
